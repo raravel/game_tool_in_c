@@ -143,9 +143,6 @@ static void step_block_pb(progressbar *pb)
 		int step = pb->size.X / pb->max_value;
 		COORD spos = get_now_cursor_position();
 
-		LOGGING(LOG_INFO, "step %d now_value %d now_step %d\n", step, pb->now_step, pb->now_step);
-		LOGGING(LOG_INFO, "console_width %d tmp_stemp %d result %lf\n", pb->size.X, pb->tmp_step, (double)pb->size.X / (double)pb->tmp_step);
-
 		gotoxy(pb->position.X + pb->now_step, pb->position.Y);
 		for (int i = 0; i < step; i++, pb->now_step++) {
 			print_progress_bar(pb);
@@ -184,10 +181,6 @@ static void step_infinity_pb(progressbar *pb)
 	int move_size = pb->size.X + pb->progressbar_size, i;
 	COORD spos = get_now_cursor_position();
 
-	gotoxy(0, 10+ pb->test);
-	LOGGING(LOG_TEST, "pb->now_step %d thread_id %d", pb->now_step, pb->thread_id);
-	
-
 	//delete before progressbar
 	if (pb->now_step >= pb->progressbar_size && pb->now_step < pb->size.X + pb->progressbar_size) {
 		SetColorS(__BEFORE_CONSOLE_COLOR__);
@@ -213,10 +206,6 @@ static mthread infinity_thread(void *arg)
 {
 	progressbar *pb = (progressbar*)arg;
 	while (pb->is_running && !pb->is_complete) {
-		COORD t = get_now_cursor_position();
-		gotoxy(0, 13 + pb->test);
-		LOGGING(LOG_TEST, "pb->thread %d", pb->thread_id);
-		gotoxy(t.X, t.Y);
 		step_infinity_pb(pb);
 	}
 	return 0;
@@ -258,7 +247,7 @@ progressbar new_progressbar(void)
 		/* is_compete */	false,
 		/*animation_delay*/	100,
 		/* color */			{ CR_BLACK, CR_GREEN},
-		/* progress */		"â”€",
+		/* progress */		"¦¡",
 		
 		/* position */		NULL,
 		/* size */			NULL,
@@ -266,8 +255,7 @@ progressbar new_progressbar(void)
 		/* one_step */		1,
 		/* tmp_step */		0,
 		/* thread_handle */ NULL,
-		/* thread_id */		0,
-		0
+		/* thread_id */		0
 	};
 	return pb;
 }

@@ -6,6 +6,9 @@
 //                     Common                     //
 ////////////////////////////////////////////////////
 #define mthread unsigned int __stdcall
+#define CONSOLE_WIDTH get_console_width()
+#define CONSOLE_HEIGHT get_console_height()
+#define CONSOLE_FONT L"D2Coding"
 
 
 ////////////////////////////////////////////////////
@@ -30,8 +33,6 @@ typedef enum _log_level {
 ////////////////////////////////////////////////////
 //                    console                     //
 ////////////////////////////////////////////////////
-#define CONSOLE_FONT L"D2Coding"
-
 HANDLE cursor_mutex;
 HANDLE color_mutex;
 
@@ -100,7 +101,7 @@ typedef struct _progressbar {
 	bool		   is_complete;		//check progress complete
 	unsigned short animation_delay;	//progress animation delay	default) 100
 	COLORS		   color;			//progress bar color		default) CR_BLACK, CR_GREEN
-	char		  *progress;		//progress bar string		default) "â”€"
+	char		  *progress;		//progress bar string		default) "¦¡"
 
 	//must initialize
 	COORD		   position;		//progress bar position
@@ -111,8 +112,8 @@ typedef struct _progressbar {
 	short		   tmp_step;		//a variable remainder step
 	HANDLE		   thread_handle;	//infinity type thread handle
 	unsigned int   thread_id;		//infinity type thread id
-	int			   test;
 } progressbar;
 
 progressbar new_progressbar(void);
 void progressbar_step(progressbar *pb);
+

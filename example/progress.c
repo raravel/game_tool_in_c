@@ -3,42 +3,49 @@
 
 int main(void)
 {
-	progressbar bar = new_progressbar();
-	SET_LOG_LVL(LOG_TEST);
-	
-	bar.size = (COORD) { 10, 1 };
-	bar.position = (COORD) { 1, 1 };
-	bar.progress = "â– ";
-	bar.animation_delay = 100;
-	bar.type = infinity;
-	bar.progressbar_size = 15;
-	bar.use_thead = false;
-	bar.test = 0;
+	printf("¦®¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¯\n");
+	printf("¦­          ¦­\n");
+	printf("¦±¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦°\n");
+	printf("¦®¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¯\n");
+	printf("¦­          ¦­\n");
+	printf("¦±¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦°\n");
+	printf("¦®¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¯\n");
+	printf("¦­          ¦­\n");
+	printf("¦±¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦°\n");
 
-	printf("â”â”â”â”â”â”â”â”â”â”â”â”“\n");
-	printf("â”ƒ          â”ƒ\n");
-	printf("â”—â”â”â”â”â”â”â”â”â”â”â”›\n");
-	printf("â”â”â”â”â”â”â”â”â”â”â”â”“\n");
-	printf("â”ƒ          â”ƒ\n");
-	printf("â”—â”â”â”â”â”â”â”â”â”â”â”›\n");
-
-	progressbar_step(&bar);
-
+	progressbar bar1 = new_progressbar();
+	bar1.size = (COORD) { 10, 1 };
+	bar1.position = (COORD) { 1, 1 };
+	bar1.progress = "¡Ú";
+	bar1.animation_delay = 100;
 
 	progressbar bar2 = new_progressbar();
+	
 	bar2.size = (COORD) { 10, 1 };
 	bar2.position = (COORD) { 1, 4 };
-	bar2.animation_delay = 50;
-	bar2.progress = "â”";
-	bar2.color = (COLORS) { CR_BLACK, CR_WHITE };
+	bar2.progress = "¡á";
+	bar2.animation_delay = 100;
 	bar2.type = infinity;
-	bar2.progressbar_size = 3;
+	bar2.progressbar_size = 15;
 	bar2.use_thead = false;
-	bar2.test = 1;
 
-	while (1) {
-		progressbar_step(&bar);
+	progressbar_step(&bar2);
+
+
+	progressbar bar3 = new_progressbar();
+	bar3.size = (COORD) { 10, 1 };
+	bar3.position = (COORD) { 1, 7 };
+	bar3.animation_delay = 50;
+	bar3.progress = "¦¬";
+	bar3.color = (COLORS) { CR_BLACK, CR_WHITE };
+	bar3.type = infinity;
+	bar3.progressbar_size = 3;
+	bar3.use_thead = false;
+
+	while (!bar1.is_complete) {
+		progressbar_step(&bar1);
 		progressbar_step(&bar2);
+		progressbar_step(&bar3);
 	}
 	
 
