@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 #include <stdbool.h>
 #include <Windows.h>
 
@@ -101,7 +101,7 @@ typedef struct _progressbar {
 	bool		   is_complete;		//check progress complete
 	unsigned short animation_delay;	//progress animation delay	default) 100
 	COLORS		   color;			//progress bar color		default) CR_BLACK, CR_GREEN
-	char		  *progress;		//progress bar string		default) "¦¡"
+	char		  *progress;		//progress bar string		default) "â”€"
 
 	//must initialize
 	COORD		   position;		//progress bar position

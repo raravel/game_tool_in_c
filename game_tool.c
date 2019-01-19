@@ -1,4 +1,4 @@
-#include "game_tool.h"
+ï»¿#include "game_tool.h"
 #include <stdio.h>
 #include <process.h>
 
@@ -247,7 +247,7 @@ progressbar new_progressbar(void)
 		/* is_compete */	false,
 		/*animation_delay*/	100,
 		/* color */			{ CR_BLACK, CR_GREEN},
-		/* progress */		"¦¡",
+		/* progress */		"â”€",
 		
 		/* position */		NULL,
 		/* size */			NULL,

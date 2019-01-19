@@ -1,29 +1,29 @@
-#include <stdio.h>
+ï»¿#include <stdio.h>
 #include "game_tool.h"
 
 int main(void)
 {
-	printf("¦®¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¯\n");
-	printf("¦­          ¦­\n");
-	printf("¦±¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦°\n");
-	printf("¦®¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¯\n");
-	printf("¦­          ¦­\n");
-	printf("¦±¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦°\n");
-	printf("¦®¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¯\n");
-	printf("¦­          ¦­\n");
-	printf("¦±¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦°\n");
+	printf("â”â”â”â”â”â”â”â”â”â”â”â”“\n");
+	printf("â”ƒ          â”ƒ\n");
+	printf("â”—â”â”â”â”â”â”â”â”â”â”â”›\n");
+	printf("â”â”â”â”â”â”â”â”â”â”â”â”“\n");
+	printf("â”ƒ          â”ƒ\n");
+	printf("â”—â”â”â”â”â”â”â”â”â”â”â”›\n");
+	printf("â”â”â”â”â”â”â”â”â”â”â”â”“\n");
+	printf("â”ƒ          â”ƒ\n");
+	printf("â”—â”â”â”â”â”â”â”â”â”â”â”›\n");
 
 	progressbar bar1 = new_progressbar();
 	bar1.size = (COORD) { 10, 1 };
 	bar1.position = (COORD) { 1, 1 };
-	bar1.progress = "¡Ú";
+	bar1.progress = "â˜…";
 	bar1.animation_delay = 100;
 
 	progressbar bar2 = new_progressbar();
 	
 	bar2.size = (COORD) { 10, 1 };
 	bar2.position = (COORD) { 1, 4 };
-	bar2.progress = "¡á";
+	bar2.progress = "â– ";
 	bar2.animation_delay = 100;
 	bar2.type = infinity;
 	bar2.progressbar_size = 15;
@@ -36,7 +36,7 @@ int main(void)
 	bar3.size = (COORD) { 10, 1 };
 	bar3.position = (COORD) { 1, 7 };
 	bar3.animation_delay = 50;
-	bar3.progress = "¦¬";
+	bar3.progress = "â”";
 	bar3.color = (COLORS) { CR_BLACK, CR_WHITE };
 	bar3.type = infinity;
 	bar3.progressbar_size = 3;
