@@ -4,7 +4,7 @@ Game Tool
 ------
 Game Tool 은 Windows에서 C언어로 게임을 만들고자 하는 사람들을 위한 라이브러리입니다. 구현하려면 복잡한 기능들을 함수 하나로 모아두었습니다.
 
-기본적으로 [D2Coding](https://github.com/naver/d2codingfont, "D2Coding") 폰트를 사용합니다.
+기본적으로 [D2Coding](https://github.com/naver/d2codingfont "D2Coding") 폰트를 사용합니다.
 그러나 D2Coding 폰트가 없어도 직접 지정할 수 있습니다.
 
 사용법
