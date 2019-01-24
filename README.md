@@ -1,4 +1,4 @@
-Game Tool
+Game Tool in C
 ========
 개요
 ------
